@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Dòng 1 và Dòng 4 (Chiếm toàn bộ chiều rộng) */
+.row-1,
+.row-4 {
+  background-color: #8e44ad;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+/* Dòng 2 (Chia thành 4 ô) */
+.row-2 {
+  display: flex;
+  gap: 10px;
+}
+
+.row-2 .box {
+  flex: 1;
+  background-color: #e74c3c;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  font-size: 1.5rem;
+}
+
+/* Dòng 3 (Chia thành 2 ô) */
+.row-3 {
+  display: flex;
+  gap: 10px;
+}
+
+.row-3 .box {
+  flex: 1;
+  background-color: #f39c12;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+
+/* Tablet (768px → 1200px) */
+@media (max-width: 1200px) {
+  .row-2,
+  .row-3 {
+    flex-wrap: wrap;
+  }
+
+  .row-2 .box {
+    /* Chia thành 2 cột */
+    flex: 1 1 45%;
+  }
+
+  .row-3 .box {
+    /* Thành 1 cột */
+    flex: 1 1 100%;
+  }
+}
+
+/* Mobile (<768px) */
+@media (max-width: 768px) {
+  .row-2,
+  .row-3 {
+    flex-direction: column;
+  }
+
+  .row-2 .box,
+  .row-3 .box {
+    flex: 1 1 100%;
+  }
+}

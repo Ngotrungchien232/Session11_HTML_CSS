@@ -1,0 +1,109 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔹 Dòng 1: Header (LOGO & NAV) */
+header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  background: brown; /* Nền đỏ toàn bộ */
+  padding: 10px;
+  color: white;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  background: white; /* Nền trắng cho chữ LOGO */
+  color: brown; /* Chữ LOGO màu đỏ */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 🔹 Dòng 2: Main & Aside (Chia đều 50%) */
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+main,
+aside {
+  background: brown;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  flex: 1; /* Chia đều 50% */
+}
+
+/* 🔹 Dòng 3 & 4: Columns (Toàn bộ chiều rộng) */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 10px;
+}
+
+.column {
+  background: #a0522d;
+  padding: 30px;
+  text-align: center;
+  flex: 1 1 30%; /* Điều chỉnh kích thước để lấp đầy toàn bộ chiều ngang */
+}
+
+/* 🔹 Mobile (< 768px) */
+@media (max-width: 767px) {
+  .content {
+    flex-direction: column; /* Main & Aside xếp dọc */
+  }
+
+  .columns {
+    display: none; /* Ẩn phần columns trên mobile */
+  }
+}
+
+/* 🔹 Tablet (768px → 1200px) */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row; /* Chia đôi Main & Aside */
+  }
+
+  .columns {
+    display: flex;
+  }
+
+  .column {
+    flex: 1 1 calc(50% - 10px); /* 2 cột mỗi hàng, bằng với Main & Aside */
+  }
+}
+
+/* 🔹 Desktop (≥ 1200px) */
+@media (min-width: 1200px) {
+  .columns {
+    display: flex;
+  }
+
+  .column {
+    flex: 1 1 calc(33.33% - 10px); /* 3 cột mỗi hàng, ngang bằng Main & Aside */
+  }
+}

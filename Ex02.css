@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.dong-1,
+.dong-3 {
+  background: #6ab0c8;
+  height: 10vh;
+}
+
+.dong-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Chia đều hai phần tử */
+  gap: 10px;
+  height: 20vh;
+}
+
+.dong-2-1 {
+  background: #e74c3c;
+}
+
+.dong-2-2 {
+  background: #f39c12;
+}
+
+.dong-4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  height: 20vh;
+}
+
+.dong-4-1 {
+  background: #34495e;
+}
+
+.dong-4-2 {
+  background: #e67e22;
+}
+
+.dong-4-3 {
+  background: #f1c40f;
+}
+
+@media (max-width: 1024px) {
+  .dong-2 {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .dong-4 {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
